@@ -1,0 +1,12 @@
+---
+- name: Vector | Install Vector
+  ansible.builtin.include_tasks:
+    file: "install/{{ ansible_pkg_mgr }}.yml"
+
+- name: Vector | Configure Vector
+  ansible.builtin.include_tasks:
+    file: configure.yml
+
+- name: Vector | Configure service
+  ansible.builtin.include_tasks:
+    file: service.yml

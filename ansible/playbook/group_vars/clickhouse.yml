@@ -1,0 +1,11 @@
+---
+clickhouse_dbs_custom:
+  - name: mydatabase
+clickhouse_users_custom:
+  - name: tester
+    password: tester
+    networks:
+      - "{{ vector_01_ext_ip }}"
+    profile: default
+    quota: default
+    comment: "User for vector"

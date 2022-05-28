@@ -2,18 +2,18 @@
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_host: 51.250.85.139
+      ansible_host: 51.250.79.231
       ansible_user: ansible
       allow_world_readable_tmpfiles: true
 vector:
   hosts:
     vector-01:
-      ansible_host: 51.250.80.55
+      ansible_host: 51.250.67.205
       ansible_user: ansible
       allow_world_readable_tmpfiles: true
 lighthouse:
   hosts:
     lighthouse-01:
-      ansible_host: 51.250.92.118
+      ansible_host: 51.250.82.27
       ansible_user: ansible
       allow_world_readable_tmpfiles: true

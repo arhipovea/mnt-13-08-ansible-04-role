@@ -1,0 +1,23 @@
+vector_config:
+  sources:
+    my_demo_logs:
+      type: demo_logs
+      format: shuffle
+      lines:
+        - Line 1
+  sinks:
+    to_clickhouse:
+      type: clickhouse
+      inputs:
+        - my_demo_logs
+      endpoint: http://{{ clickhouse_01_ext_ip }}:8123
+      database: mydatabase
+      table: mytable
+      compression: gzip
+      healthcheck: false
+      skip_unknown_fields: true
+      auth:
+        strategy: basic
+        user: tester
+        password: tester
+        
