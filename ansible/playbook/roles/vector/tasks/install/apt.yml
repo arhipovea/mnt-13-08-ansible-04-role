@@ -1,0 +1,8 @@
+---
+- name: Vector | Install deb package
+  become: true
+  ansible.builtin.apt:
+    name: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb"
+    state: present
+    update_cache: yes
+  notify: Vector | Restart vector service
