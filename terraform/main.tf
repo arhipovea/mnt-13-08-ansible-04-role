@@ -37,5 +37,5 @@ resource "local_file" "ip_cfg" {
       lighthouse_01_int_ip = yandex_compute_instance.lighthouse_01.network_interface.0.ip_address      
     }
   )
-  filename = "../ansible/playbook/group_vars/all.yml"
+  filename = "../ansible/playbook/group_vars/all/ip.yml"
 }

@@ -1,0 +1,13 @@
+---
+- name: Lighthouse | Install git
+  become: true
+  ansible.builtin.package:
+    name:
+      - git
+    state: present
+
+- name: Lighthouse | Clone lighthouse
+  become: true
+  ansible.builtin.git:
+    repo: "{{ lighthouse_uri }}"
+    dest: "{{ lighthouse_dest }}"

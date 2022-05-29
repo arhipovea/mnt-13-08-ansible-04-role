@@ -1,11 +1,17 @@
 ---
-clickhouse_dbs_custom:
-  - name: mydatabase
+clickhouse_allow_ip: 176.195.141.73
+clickhouse_listen_host:
+  - "::"
 clickhouse_users_custom:
-  - name: tester
-    password: tester
-    networks:
-      - "{{ vector_01_ext_ip }}"
+  - name: "{{ clickhouse_db_user }}"
+    password: "{{ clickhouse_db_password }}"
+    networks: 
+      # - "{{ vector_01_ext_ip }}" 
+      # - "{{ clickhouse_allow_ip }}"
+      - "::/0"
     profile: default
     quota: default
-    comment: "User for vector"
+    dbs: [ "{{ clickhouse_db_name }}" ] 
+    comment: User for lighthouse 
+clickhouse_dbs_custom:
+  - name: "{{ clickhouse_db_name }}" 
