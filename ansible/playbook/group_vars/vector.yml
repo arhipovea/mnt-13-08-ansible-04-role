@@ -3,7 +3,7 @@ vector_config:
     my_demo_logs:
       type: file
       include:
-      - /home/ansible/logs/*.log
+        - /home/ansible/logs/*.log
       read_from: beginning
   sinks:
     to_clickhouse:
@@ -20,4 +20,3 @@ vector_config:
         strategy: basic
         user: "{{ clickhouse_db_user }}"
         password: "{{ clickhouse_db_password }}"
-        
